@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="vstup">
+    <button onclick="start()">prevest</button>
+    <p id="vysledek"></p>
+    <script>
+        function start() {
+            let cislo = parseInt(document.getElementById('vstup').value);
+            let dva = cislo.toString(2);
+            document.getElementById('vysledek').innerText = dva;
+        }
+    </script>
+</body>
+</html>

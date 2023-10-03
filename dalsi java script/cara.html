@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Něco</title>
+</head>
+<body>
+    <input type="number" id="line">
+    <button onclick="start()">start</button>
+
+    <div id="vysledek"></div>
+    <script>
+        function start() {
+        let delka = document.getElementById ('line').value;
+        let cara = '.'.repeat(delka);
+        document.getElementById('vysledek').innerText = cara;
+        }
+
+    </script>
+</body>
+</html>

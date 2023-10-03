@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prvočísla do 1000</title>
+</head>
+<body>
+    <h1>Prvočísla do 1000</h1>
+    <button id="startButton">Start</button>
+    <div id="primeNumbers"></div>
+
+    <script>
+        function isPrime(number) {
+            if (number <= 1) return false;
+            if (number <= 3) return true;
+
+            if (number % 2 === 0 || number % 3 === 0) return false;
+
+            for (let i = 5; i * i <= number; i += 6) {
+                if (number % i === 0 || number % (i + 2) === 0) return false;
+            }
+
+            return true;
+        }
+
+        document.getElementById("startButton").addEventListener("click", function () {
+            const primeNumbers = [];
+
+            for (let i = 2; i <= 1000; i++) {
+                if (isPrime(i)) {
+                    primeNumbers.push(i);
+                }
+            }
+
+            const primeNumbersDiv = document.getElementById("primeNumbers");
+            primeNumbersDiv.textContent = "Prvočísla do 1000: " + primeNumbers.join(", ");
+        });
+    </script>
+</body>
+</html>
